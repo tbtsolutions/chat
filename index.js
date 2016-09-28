@@ -12,6 +12,14 @@ io.on('connection', function(socket){
     socket.on('samed',function(data){
       io.emit('geridondum');
     });
+        socket.on('deleteobjectUnity',function(data){
+        console.log(data);
+       io.sockets.emit('deleteobjectApi', data);
+    });
+    socket.on('deletedobjectApi',function(data){
+       console.log(data); 
+       io.sockets.emit('deletedobjectUnity',data);
+    });
 });
 
 http.listen(process.env.PORT || 1337, function(){
