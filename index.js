@@ -2,7 +2,7 @@
 var port = process.env.PORT || 3000;
 var app = require('express')();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var io = require('socket.io').listen(process.env.PORT||3000);
 
 app.get('/', function(req, res){
  res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -11,8 +11,4 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   io.emit("ibrahim");
-});
-
-http.listen(port, function(){
-  console.log('listening on *:3000');
 });
