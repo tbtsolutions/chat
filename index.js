@@ -7,7 +7,7 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  console.log('a user connected');
+  io.emit("ibrahim");
 });
 
 http.listen(3000, function(){
