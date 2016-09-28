@@ -10,7 +10,7 @@ io.on('connection', function(socket){
 
     io.emit('ibrahim');
     socket.on('samed',function(data){
-      alert("geri döndüm");
+      io.emit('geridondum');
     });
 });
 
