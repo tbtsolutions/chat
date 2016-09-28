@@ -3,10 +3,13 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+   console.log("app içinde");
+   document.write("app baglantı sağlandı");
 });
 
 io.on('connection', function(socket){
+  console.log("baglantı");
+  document.write("baglantı sağlandı");
     io.emit('ibrahim');
 });
 
