@@ -21,7 +21,6 @@ io.on('connection', function(socket){
        io.sockets.emit('deletedobjectUnity',data);
     });
 });
-
-http.listen(process.env.PORT || 1337, function(){
+http.listen(process.env.PORT || 3000, function(){
   console.log('listening on *:3000');
 });
